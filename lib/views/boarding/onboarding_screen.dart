@@ -22,7 +22,7 @@ class OnBoardingScreen extends StatelessWidget {
       AppColor.pink,
     ];
     final List<Offset> circlePositions = [
-      const Offset(25,100),
+      const Offset(25,65),
       const Offset(80,400),
       const Offset(80,150),
       const Offset(150,100),
@@ -41,7 +41,7 @@ class OnBoardingScreen extends StatelessWidget {
           _buildpositionedImageCircle(const Offset(30, 300), "assets/macroon.png", 80),
 
           Positioned(
-            bottom:120,
+            bottom:60,
             left: 30,
             right: 30,
             child: Column(
@@ -146,6 +146,14 @@ class OnBoardingScreen extends StatelessWidget {
             btnTitleColor: AppColor.white,
             bgColor: AppColor.primary,
             borderRadius: 45.r,
+          gradient: LinearGradient(
+            end: Alignment.bottomCenter,
+              begin: Alignment.topCenter,
+              colors: [
+                AppColor.primary,
+                AppColor.secondry
+              ]
+          ),
         ),
       ),
     );
