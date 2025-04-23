@@ -27,7 +27,7 @@ This project aims to create a visually appealing and user friendly interface for
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Ibtasam-98/artisanbakes.git](https://github.com/Ibtasam-98/artisanbakes.git)
+    git clone https://github.com/Ibtasam-98/artisanbakes.git
     cd artisanbakes
     ```
 
