@@ -13,33 +13,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
 
     const baseDesignWidth = 360.0;
     const baseDesignHeight = 690.0;
 
-    final bool isTablet = screenWidth < 600;
-
-    double designWidth = baseDesignWidth;
-    double designHeight = baseDesignHeight;
-
-    if(isTablet){
-      designWidth = 768.0;
-      designHeight = 1024.0;
-    }
-
 
     return ScreenUtilInit(
-      designSize: Size(designWidth,designHeight),
+      designSize: const Size(baseDesignWidth, baseDesignHeight),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context,child){
+      builder: (context, child) {
+        print("Initializing GetMaterialApp...");
         return GetMaterialApp(
-          debugShowCheckedModeBanner: true,
-          home:child,
+          debugShowCheckedModeBanner: false,
+          home: child,
         );
       },
-      child: OnBoardingScreen(),
+      child:  OnBoardingScreen(),
     );
   }
 }

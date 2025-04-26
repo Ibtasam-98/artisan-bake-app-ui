@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,6 +26,9 @@ class CustomText extends StatelessWidget {
     this.isGlass = false,
     this.glassPadding = const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
     this.textStyle,
+    this.withLines = false, // Added parameter to control lines
+    this.lineColor, // Added parameter for line color
+    this.lineWidth, // Added parameter for line width
   }) : assert(
   (title != null) ^ (firstText != null && secondText != null),
   'Provide either a single title or both firstText and secondText for dual-tone.',
@@ -53,6 +55,9 @@ class CustomText extends StatelessWidget {
   final bool isGlass;
   final EdgeInsetsGeometry glassPadding;
   final TextStyle? textStyle;
+  final bool withLines;
+  final Color? lineColor;
+  final double? lineWidth;
 
   String capitalizeText(String text) {
     return text
@@ -86,7 +91,7 @@ class CustomText extends StatelessWidget {
     Widget textWidget;
 
     if (title != null) {
-      textWidget = Text(
+      Widget titleText = Text(
         capitalize && title != null ? capitalizeText(title!) : title ?? '',
         overflow: textOverflow,
         maxLines: maxLines,
@@ -97,6 +102,30 @@ class CustomText extends StatelessWidget {
           color: textColor,
         ),
       );
+
+      if (withLines) {
+        textWidget = Row(
+          children: [
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(right: 10.w),
+                height: 1.h,
+                color: lineColor ?? Colors.grey, // Use provided color or default
+              ),
+            ),
+            titleText,
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(left: 10.w),
+                height: 1.h,
+                color: lineColor ?? Colors.grey, // Use provided color or default
+              ),
+            ),
+          ],
+        );
+      } else {
+        textWidget = titleText;
+      }
     } else if (firstText != null && secondText != null) {
       textWidget = Row(
         mainAxisSize: MainAxisSize.min,
@@ -131,3 +160,4 @@ class CustomText extends StatelessWidget {
     return textWidget;
   }
 }
+

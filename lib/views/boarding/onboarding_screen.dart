@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 
 import '../../config/appcolors.dart';
 import '../../controller/onboarding_screen_controller.dart';
+import '../../widgets/custom_positioned_stack_circle.dart';
+import '../auth/login_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -34,14 +36,14 @@ class OnBoardingScreen extends StatelessWidget {
       backgroundColor: AppColor.white,
       body: Stack(
         children: [
-          _buildPositiondCircle(const Offset(-100,-80),180, AppColor.primary, 20),
-          _buildPositiondCircle(const Offset(-140,-115),250, AppColor.secondry.withOpacity(0.5), 20),
+          buildPositiondCircle(const Offset(-100,-80),180, AppColor.secondry.withOpacity(0.3), 20),
+          buildPositiondCircle(const Offset(-140,-115),250, AppColor.primary, 20),
           _buildPositionedImageStack(const Offset(30, 200),160, "assets/cake.png",3, AppColor.pink,130),
           _buildpositionedImageCircle(const Offset(120, 160), "assets/bread.png", 45),
           _buildpositionedImageCircle(const Offset(30, 300), "assets/macroon.png", 80),
 
           Positioned(
-            bottom:60,
+            bottom:80,
             left: 30,
             right: 30,
             child: Column(
@@ -52,17 +54,17 @@ class OnBoardingScreen extends StatelessWidget {
                   secondText: " Bakes",
                   firstTextColor: AppColor.black,
                   secondTextColor: AppColor.secondry,
-                  fontSize: 35.sp,
+                  fontSize: 20.sp,
                 ),
                 AppSizedBox.space10h,
                 CustomText(
                   title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-                  fontSize: 25.sp,
+                  fontSize: 16.sp,
                   textColor: Colors.black,
                   textAlign: TextAlign.start,
                 ),
-                AppSizedBox.space25h,
-                Obx(() => _buildContinueButtion(controller)),
+                AppSizedBox.space35h,
+                Obx(() => _buildContinueButtion(controller, context)),
               ],
             ),
           ),
@@ -74,23 +76,6 @@ class OnBoardingScreen extends StatelessWidget {
             )
         ],
       ),
-    );
-  }
-  Widget _buildPositiondCircle(Offset offset, double size, Color color, double borderWidth){
-    return Positioned(
-        top: offset.dy,
-        right: offset.dx,
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: color,
-              width: borderWidth,
-            )
-          ),
-        ),
     );
   }
 
@@ -134,18 +119,23 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContinueButtion(onBoardingScreenController controller){
+  Widget _buildContinueButtion(onBoardingScreenController controller, BuildContext context){
     return AnimatedOpacity(
         opacity: controller.showContinueButton.value ? 1.0 : 0.0,
         duration: const Duration(seconds: 1),
       child: SlideTransition(
           position: controller.slideAnimaiton,
         child: CustomButton(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          },
             haveBgColor: true,
             btnTitle: "Continue",
             btnTitleColor: AppColor.white,
             bgColor: AppColor.primary,
             borderRadius: 45.r,
+          btnTitleFontSize: 16.sp,
+          height: 50.h,
           gradient: LinearGradient(
             end: Alignment.bottomCenter,
               begin: Alignment.topCenter,

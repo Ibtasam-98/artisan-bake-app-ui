@@ -1,4 +1,4 @@
-
+import 'package:artisanbakes/config/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../config/app_sizedbox.dart';
@@ -6,7 +6,6 @@ import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
   final String btnTitle;
-
   final Color btnTitleColor;
   final Color? btnBorderColor;
   final Color bgColor;
@@ -18,9 +17,10 @@ class CustomButton extends StatelessWidget {
   final Color? iconColor;
   final double? iconSize;
   final double? height;
+  final double? btnWidth; // Added parameter for button width
   final VoidCallback? onTap;
   final bool isLoading;
-
+  final double? btnTitleFontSize;
 
   const CustomButton({
     super.key,
@@ -36,16 +36,19 @@ class CustomButton extends StatelessWidget {
     this.useGradient = true,
     required this.borderRadius,
     this.height,
+    this.btnWidth, // Initialize the new parameter
     this.onTap,
-    this.isLoading = false, // Default is false
+    this.isLoading = false,
+    this.btnTitleFontSize,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: isLoading ? null : onTap, // Disable tap if loading
+      onTap: isLoading ? null : onTap,
       borderRadius: BorderRadius.circular(borderRadius),
       child: Container(
+        width: btnWidth, // Use the provided width
         height: height ?? 60.h,
         decoration: BoxDecoration(
           color: haveBgColor ? bgColor : null,
@@ -56,36 +59,35 @@ class CustomButton extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(borderRadius),
         ),
-        child: Center(
-          child: isLoading
-              ? CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          )
-              : Row(
-            mainAxisAlignment:
-            icon == null ? MainAxisAlignment.center : MainAxisAlignment.start,
-            children: [
-              AppSizedBox.space10w,
-              Expanded(
-                child: CustomText(
-                  textColor: btnTitleColor,
-                  fontSize: 20.sp,
-                  title: btnTitle,
-                  maxLines: 1,
-                  textOverflow: TextOverflow.ellipsis,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              if (icon != null) ...[
-                AppSizedBox.space10w,
-                Icon(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Centered Text
+            CustomText(
+              textColor: btnTitleColor,
+              fontSize: btnTitleFontSize ?? 20.sp,
+              title: btnTitle,
+              maxLines: 1,
+              textOverflow: TextOverflow.ellipsis,
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.center,
+            ),
+            // Left Aligned Icon with Spacing
+            if (icon != null)
+              Positioned(
+                left: 10.w,
+                child: Icon(
                   icon,
-                  color: iconColor ?? Colors.black,
+                  color: iconColor ?? AppColor.black,
                   size: iconSize ?? 24.0,
                 ),
-              ],
-            ],
-          ),
+              ),
+            // Loading Indicator (remains centered)
+            if (isLoading)
+              const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+          ],
         ),
       ),
     );

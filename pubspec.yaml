@@ -37,6 +37,7 @@ dependencies:
   flutter_screenutil:
   get:
   google_fonts:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
