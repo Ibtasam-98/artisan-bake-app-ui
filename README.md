@@ -12,15 +12,25 @@ This project aims to create a visually appealing and user friendly interface for
     * Layered circular background elements with custom styling.
     * Image placements of various baked goods to create an enticing visual.
     * A welcoming title and descriptive text.
-    * An animated "Continue" button to guide the user.
 
-## Planned Features (Coming Soon)
+## Planned Features (Coming Soon - UI Focus Only)
 
-* Login Screen UI
-* Registration Screen UI
-* Home Screen UI (featuring recipe listings, search, etc.)
-* Recipe Detail Screen UI
-* Profile Screen UI
+* **Login Screen UI**
+* **Registration Screen UI**
+* **Home Screen UI** (featuring recipe listings, search, etc.)
+* **Recipe Detail Screen UI**
+* **Profile Screen UI**
+* **Shopping Cart UI:** Design for users to view and manage their selected items.
+* **Checkout Process UI:** Screens for order summary, address input, payment options.
+* **Search Filters and Sorting UI:** Interfaces for refining recipe searches (e.g., ingredients, dietary restrictions).
+* **Recipe Submission UI:** For users to contribute their own baking creations (if applicable).
+* **Notifications UI:** Displaying updates, order statuses, or new recipe alerts.
+* **Settings Screen UI:** Allowing users to customize app preferences (e.g., themes, units).
+* **Onboarding Flow UI:** Guided introduction for new users highlighting key features.
+* **Error Handling UI:** Clear and informative screens for various error scenarios.
+* **Empty State UI:** Engaging designs for when lists are empty (e.g., no favorite recipes yet).
+* **Loading Indicators:** Visual cues to show users when content is being fetched.
+* **Animations and Transitions:** Subtle UI animations to enhance user experience.
 * And more UI components and screens as the application evolves.
 
 ## Getting Started
