@@ -8,15 +8,17 @@ This project aims to create a visually appealing and user friendly interface for
 
 ## Current Features
 
+## Current Features
+
 * **Welcome Screen:** A beautifully designed introductory screen featuring:
     * Layered circular background elements with custom styling.
     * Image placements of various baked goods to create an enticing visual.
-    * A welcoming title and descriptive text.
+    * A welcoming title and descriptive text. **(UI Only)**
+* **Login Screen UI:** A clean and intuitive interface for existing users to log in. **(UI Only)**
+* **Registration Screen UI:** A straightforward screen for new users to create an account. **(UI Only)**
 
 ## Planned Features (Coming Soon - UI Focus Only)
 
-* **Login Screen UI**
-* **Registration Screen UI**
 * **Home Screen UI** (featuring recipe listings, search, etc.)
 * **Recipe Detail Screen UI**
 * **Profile Screen UI**
