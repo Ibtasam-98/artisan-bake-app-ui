@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 import '../../config/appcolors.dart';
 import '../../controller/onboarding_screen_controller.dart';
-import '../../widgets/custom_positioned_stack_circle.dart';
+import '../../widgets/custom_positioned_circle.dart';
 import '../auth/login_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -36,8 +36,19 @@ class OnBoardingScreen extends StatelessWidget {
       backgroundColor: AppColor.white,
       body: Stack(
         children: [
-          buildPositiondCircle(const Offset(-100,-80),180, AppColor.secondry.withOpacity(0.3), 20),
-          buildPositiondCircle(const Offset(-140,-115),250, AppColor.primary, 20),
+          CustomPositionedCircle(
+              offset: Offset(-100,-80),
+              size: 180,
+              color:  AppColor.secondry.withOpacity(0.3),
+              borderWidth: 20,
+          ),
+          CustomPositionedCircle(
+            offset: Offset(-140,-115),
+            size: 250,
+            color:  AppColor.primary,
+            borderWidth: 20,
+          ),
+
           _buildPositionedImageStack(const Offset(30, 200),160, "assets/cake.png",3, AppColor.pink,130),
           _buildpositionedImageCircle(const Offset(120, 160), "assets/bread.png", 45),
           _buildpositionedImageCircle(const Offset(30, 300), "assets/macroon.png", 80),
@@ -59,7 +70,7 @@ class OnBoardingScreen extends StatelessWidget {
                 AppSizedBox.space10h,
                 CustomText(
                   title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   textColor: Colors.black,
                   textAlign: TextAlign.start,
                 ),
@@ -126,8 +137,9 @@ class OnBoardingScreen extends StatelessWidget {
       child: SlideTransition(
           position: controller.slideAnimaiton,
         child: CustomButton(
+          btnWidth: Get.width,
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            Get.to(LoginScreen());
           },
             haveBgColor: true,
             btnTitle: "Continue",
