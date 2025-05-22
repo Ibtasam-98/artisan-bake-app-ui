@@ -8,6 +8,8 @@ class AppColor{
   static const pink = Colors.pink;
   static const green = Colors.green;
   static const blue = Colors.blue;
+  static const orange = Colors.orange;
+  static const yellow = Color(0xffdfb44a);
   static const transparent = Colors.transparent;
   static const primary = Color(0xffFE637E);
   static const secondry = Color(0XFFab122d);

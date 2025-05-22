@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 import '../../widgets/custom_positioned_circle.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../home/app_home_screen.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen ({super.key});
 
@@ -100,8 +102,11 @@ class LoginScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                AppSizedBox.space10h,
                 CustomButton(
-                  onTap: (){},
+                  onTap: (){
+                    Get.to(AppHomeScreen());
+                  },
                   btnWidth: Get.width,
                     height: 45.h,
                     haveBgColor: true,
