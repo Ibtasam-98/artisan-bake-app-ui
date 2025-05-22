@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains the Flutter UI design code for the Artisan Bakes application. Currently it showcases the design of the welcome screen. As development progresses this repository will be updated with UI implementations for other screens such as login, registration, home, and more.
+This repository contains the Flutter UI design code for the Artisan Bakes application. It currently showcases the design of the **welcome, login, registration, and home screens**. As development progresses, this repository will be updated with UI implementations for other screens and features.
 
-This project aims to create a visually appealing and user friendly interface for a baking application.
+This project aims to create a visually appealing and user-friendly interface for a baking application.
 
-## Current Features
+---
 
 ## Current Features
 
@@ -16,10 +16,12 @@ This project aims to create a visually appealing and user friendly interface for
     * A welcoming title and descriptive text. **(UI Only)**
 * **Login Screen UI:** A clean and intuitive interface for existing users to log in. **(UI Only)**
 * **Registration Screen UI:** A straightforward screen for new users to create an account. **(UI Only)**
+* **Home Screen UI:** A comprehensive display featuring categories, popular items, a search bar, and a bottom navigation bar. **(UI Only)**
+
+---
 
 ## Planned Features (Coming Soon - UI Focus Only)
 
-* **Home Screen UI** (featuring recipe listings, search, etc.)
 * **Recipe Detail Screen UI**
 * **Profile Screen UI**
 * **Shopping Cart UI:** Design for users to view and manage their selected items.
@@ -35,11 +37,13 @@ This project aims to create a visually appealing and user friendly interface for
 * **Animations and Transitions:** Subtle UI animations to enhance user experience.
 * And more UI components and screens as the application evolves.
 
+---
+
 ## Getting Started
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Ibtasam-98/artisanbakes.git
+    git clone [https://github.com/Ibtasam-98/artisanbakes.git](https://github.com/Ibtasam-98/artisanbakes.git)
     cd artisanbakes
     ```
 
