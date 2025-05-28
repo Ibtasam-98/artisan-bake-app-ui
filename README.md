@@ -6,7 +6,6 @@ This repository contains the Flutter UI design code for the Artisan Bakes applic
 
 This project aims to create a visually appealing and user-friendly interface for a baking application.
 
----
 
 ## Current Features
 
@@ -18,7 +17,6 @@ This project aims to create a visually appealing and user-friendly interface for
 * **Registration Screen UI:** A straightforward screen for new users to create an account. **(UI Only)**
 * **Home Screen UI:** A comprehensive display featuring categories, popular items, a search bar, and a bottom navigation bar. **(UI Only)**
 
----
 
 ## Planned Features (Coming Soon - UI Focus Only)
 
@@ -37,7 +35,6 @@ This project aims to create a visually appealing and user-friendly interface for
 * **Animations and Transitions:** Subtle UI animations to enhance user experience.
 * And more UI components and screens as the application evolves.
 
----
 
 ## Getting Started
 
